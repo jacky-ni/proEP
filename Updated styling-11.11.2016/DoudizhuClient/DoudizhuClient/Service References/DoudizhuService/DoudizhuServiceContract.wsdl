@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="DoudizhuServiceContract" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="DoudizhuServiceContract" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="DoudizhuServiceContract/Imports">
+      <xsd:import namespace="DoudizhuServiceContract" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDoudizhuService_LoadLobby_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadLobby" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_LoadLobby_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadLobbyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_UpdateLobby_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLobby" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_UpdateLobby_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLobbyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_SetPlayerReady_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPlayerReady" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_SetPlayerReady_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPlayerReadyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_SetPlayerWait_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPlayerWait" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_SetPlayerWait_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPlayerWaitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_CreateRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoom" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_CreateRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_PlayerJoinRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerJoinRoom" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_PlayerJoinRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerJoinRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_PlayerLeaveRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerLeaveRoom" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_PlayerLeaveRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerLeaveRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_DetermindLandlord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetermindLandlord" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_DetermindLandlord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetermindLandlordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetBetNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBetNumber" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetBetNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBetNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetBaseScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseScore" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetBaseScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetLeftoverCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftoverCards" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetLeftoverCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftoverCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_StartDetermineLandlord_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartDetermineLandlord" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_StartDetermineLandlord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartDetermineLandlordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GiveCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GiveCards" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GiveCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GiveCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_ValidateCardsCombination_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCardsCombination" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_ValidateCardsCombination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCardsCombinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_ValidateCardsComparison_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCardsComparison" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_ValidateCardsComparison_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCardsComparisonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GiveHints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GiveHints" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GiveHints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GiveHintsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetPlayerByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_GetPlayerByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayerByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_PlayerQuit_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerQuit" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_PlayerQuit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayerQuitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_InGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:InGame" />
+  </wsdl:message>
+  <wsdl:message name="IDoudizhuService_InGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoadLobby_loadLobbySubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadLobbySubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ILoadLobby_loadLobbySubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadLobbySubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoadLobby_loadLobbyUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadLobbyUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ILoadLobby_loadLobbyUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadLobbyUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoadLobby_LoadLobby_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:LoadLobby_Client" />
+  </wsdl:message>
+  <wsdl:message name="ISetCancelPlayerReady_playerSetCancelReadySubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:playerSetCancelReadySubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ISetCancelPlayerReady_playerSetCancelReadySubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:playerSetCancelReadySubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISetCancelPlayerReady_playerSetCancelReadyUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:playerSetCancelReadyUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ISetCancelPlayerReady_playerSetCancelReadyUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:playerSetCancelReadyUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISetCancelPlayerReady_SetCancelPlayerReady_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetCancelPlayerReady_Client" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerJoinLeaveRoom_playerJoinLeaveRoomSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:playerJoinLeaveRoomSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerJoinLeaveRoom_playerJoinLeaveRoomSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:playerJoinLeaveRoomSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerJoinLeaveRoom_playerJoinLeaveRoomUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:playerJoinLeaveRoomUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerJoinLeaveRoom_playerJoinLeaveRoomUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:playerJoinLeaveRoomUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlayerJoinLeaveRoom_PlayerJoinLeaveRoom_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerJoinLeaveRoom_Client" />
+  </wsdl:message>
+  <wsdl:message name="IStartGame_startGameSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:startGameSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IStartGame_startGameSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:startGameSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStartGame_startGameUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:startGameUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IStartGame_startGameUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:startGameUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStartGame_StartGame_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:StartGame_Client" />
+  </wsdl:message>
+  <wsdl:message name="IDeterminteLandlord_determinteLandlordSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:determinteLandlordSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IDeterminteLandlord_determinteLandlordSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:determinteLandlordSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeterminteLandlord_determinteLandlordUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:determinteLandlordUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IDeterminteLandlord_determinteLandlordUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:determinteLandlordUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeterminteLandlord_DeterminteLandlord_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DeterminteLandlord_Client" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateGame_updateGameSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateGameSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateGame_updateGameSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateGameSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateGame_updateGameUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateGameUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateGame_updateGameUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateGameUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateGame_UpdateGame_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGame_Client" />
+  </wsdl:message>
+  <wsdl:message name="ITimeCounterDown_timeCounterDownSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:timeCounterDownSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ITimeCounterDown_timeCounterDownSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:timeCounterDownSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimeCounterDown_timeCounterDownUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:timeCounterDownUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="ITimeCounterDown_timeCounterDownUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:timeCounterDownUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimeCounterDown_TimeCounterDown_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:TimeCounterDown_Client" />
+  </wsdl:message>
+  <wsdl:message name="IGameOver_gameoverSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:gameoverSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IGameOver_gameoverSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gameoverSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameOver_gameoverUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:gameoverUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IGameOver_gameoverUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gameoverUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameOver_GameOver_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GameOver_Client" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateLandlordCard_updateLandlordCardSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateLandlordCardSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateLandlordCard_updateLandlordCardSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateLandlordCardSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateLandlordCard_updateLandlordCardUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateLandlordCardUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateLandlordCard_updateLandlordCardUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateLandlordCardUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateLandlordCard_UpdateLandlordCard_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLandlordCard_Client" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateChatter_updateChatterSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateChatterSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateChatter_updateChatterSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateChatterSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateChatter_updateChatterUnSubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateChatterUnSubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateChatter_updateChatterUnSubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateChatterUnSubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUpdateChatter_UpdateChatter_Client_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdateChatter_Client" />
+  </wsdl:message>
+  <wsdl:portType name="IDoudizhuService">
+    <wsdl:operation name="LoadLobby">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/LoadLobby" message="tns:IDoudizhuService_LoadLobby_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/LoadLobbyResponse" message="tns:IDoudizhuService_LoadLobby_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLobby">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/UpdateLobby" message="tns:IDoudizhuService_UpdateLobby_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/UpdateLobbyResponse" message="tns:IDoudizhuService_UpdateLobby_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPlayerReady">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/SetPlayerReady" message="tns:IDoudizhuService_SetPlayerReady_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/SetPlayerReadyResponse" message="tns:IDoudizhuService_SetPlayerReady_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPlayerWait">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/SetPlayerWait" message="tns:IDoudizhuService_SetPlayerWait_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/SetPlayerWaitResponse" message="tns:IDoudizhuService_SetPlayerWait_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/Register" message="tns:IDoudizhuService_Register_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/RegisterResponse" message="tns:IDoudizhuService_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/Login" message="tns:IDoudizhuService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/LoginResponse" message="tns:IDoudizhuService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/Logout" message="tns:IDoudizhuService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/LogoutResponse" message="tns:IDoudizhuService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoom">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/CreateRoom" message="tns:IDoudizhuService_CreateRoom_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/CreateRoomResponse" message="tns:IDoudizhuService_CreateRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerJoinRoom">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/PlayerJoinRoom" message="tns:IDoudizhuService_PlayerJoinRoom_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/PlayerJoinRoomResponse" message="tns:IDoudizhuService_PlayerJoinRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerLeaveRoom">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/PlayerLeaveRoom" message="tns:IDoudizhuService_PlayerLeaveRoom_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/PlayerLeaveRoomResponse" message="tns:IDoudizhuService_PlayerLeaveRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetermindLandlord">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/DetermindLandlord" message="tns:IDoudizhuService_DetermindLandlord_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/DetermindLandlordResponse" message="tns:IDoudizhuService_DetermindLandlord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBetNumber">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetBetNumber" message="tns:IDoudizhuService_GetBetNumber_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetBetNumberResponse" message="tns:IDoudizhuService_GetBetNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseScore">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetBaseScore" message="tns:IDoudizhuService_GetBaseScore_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetBaseScoreResponse" message="tns:IDoudizhuService_GetBaseScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftoverCards">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetLeftoverCards" message="tns:IDoudizhuService_GetLeftoverCards_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetLeftoverCardsResponse" message="tns:IDoudizhuService_GetLeftoverCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartDetermineLandlord">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/StartDetermineLandlord" message="tns:IDoudizhuService_StartDetermineLandlord_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/StartDetermineLandlordResponse" message="tns:IDoudizhuService_StartDetermineLandlord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GiveCards">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GiveCards" message="tns:IDoudizhuService_GiveCards_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GiveCardsResponse" message="tns:IDoudizhuService_GiveCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardsCombination">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/ValidateCardsCombination" message="tns:IDoudizhuService_ValidateCardsCombination_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/ValidateCardsCombinationResponse" message="tns:IDoudizhuService_ValidateCardsCombination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardsComparison">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/ValidateCardsComparison" message="tns:IDoudizhuService_ValidateCardsComparison_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/ValidateCardsComparisonResponse" message="tns:IDoudizhuService_ValidateCardsComparison_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GiveHints">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GiveHints" message="tns:IDoudizhuService_GiveHints_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GiveHintsResponse" message="tns:IDoudizhuService_GiveHints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayerByUsername">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetPlayerByUsername" message="tns:IDoudizhuService_GetPlayerByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/GetPlayerByUsernameResponse" message="tns:IDoudizhuService_GetPlayerByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/SendMessage" message="tns:IDoudizhuService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/SendMessageResponse" message="tns:IDoudizhuService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerQuit">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/PlayerQuit" message="tns:IDoudizhuService_PlayerQuit_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/PlayerQuitResponse" message="tns:IDoudizhuService_PlayerQuit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InGame">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDoudizhuService/InGame" message="tns:IDoudizhuService_InGame_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDoudizhuService/InGameResponse" message="tns:IDoudizhuService_InGame_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ILoadLobby">
+    <wsdl:operation name="loadLobbySubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/ILoadLobby/loadLobbySubscribe" message="tns:ILoadLobby_loadLobbySubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ILoadLobby/loadLobbySubscribeResponse" message="tns:ILoadLobby_loadLobbySubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadLobbyUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/ILoadLobby/loadLobbyUnSubscribe" message="tns:ILoadLobby_loadLobbyUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ILoadLobby/loadLobbyUnSubscribeResponse" message="tns:ILoadLobby_loadLobbyUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadLobby_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ILoadLobby/LoadLobby_Client" message="tns:ILoadLobby_LoadLobby_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISetCancelPlayerReady">
+    <wsdl:operation name="playerSetCancelReadySubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/ISetCancelPlayerReady/playerSetCancelReadySubscribe" message="tns:ISetCancelPlayerReady_playerSetCancelReadySubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ISetCancelPlayerReady/playerSetCancelReadySubscribeResponse" message="tns:ISetCancelPlayerReady_playerSetCancelReadySubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="playerSetCancelReadyUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/ISetCancelPlayerReady/playerSetCancelReadyUnSubscribe" message="tns:ISetCancelPlayerReady_playerSetCancelReadyUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ISetCancelPlayerReady/playerSetCancelReadyUnSubscribeResponse" message="tns:ISetCancelPlayerReady_playerSetCancelReadyUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCancelPlayerReady_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ISetCancelPlayerReady/SetCancelPlayerReady_Client" message="tns:ISetCancelPlayerReady_SetCancelPlayerReady_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPlayerJoinLeaveRoom">
+    <wsdl:operation name="playerJoinLeaveRoomSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IPlayerJoinLeaveRoom/playerJoinLeaveRoomSubscribe" message="tns:IPlayerJoinLeaveRoom_playerJoinLeaveRoomSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IPlayerJoinLeaveRoom/playerJoinLeaveRoomSubscribeResponse" message="tns:IPlayerJoinLeaveRoom_playerJoinLeaveRoomSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="playerJoinLeaveRoomUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IPlayerJoinLeaveRoom/playerJoinLeaveRoomUnSubscribe" message="tns:IPlayerJoinLeaveRoom_playerJoinLeaveRoomUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IPlayerJoinLeaveRoom/playerJoinLeaveRoomUnSubscribeResponse" message="tns:IPlayerJoinLeaveRoom_playerJoinLeaveRoomUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayerJoinLeaveRoom_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IPlayerJoinLeaveRoom/PlayerJoinLeaveRoom_Client" message="tns:IPlayerJoinLeaveRoom_PlayerJoinLeaveRoom_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IStartGame">
+    <wsdl:operation name="startGameSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IStartGame/startGameSubscribe" message="tns:IStartGame_startGameSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IStartGame/startGameSubscribeResponse" message="tns:IStartGame_startGameSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="startGameUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IStartGame/startGameUnSubscribe" message="tns:IStartGame_startGameUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IStartGame/startGameUnSubscribeResponse" message="tns:IStartGame_startGameUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartGame_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IStartGame/StartGame_Client" message="tns:IStartGame_StartGame_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDeterminteLandlord">
+    <wsdl:operation name="determinteLandlordSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDeterminteLandlord/determinteLandlordSubscribe" message="tns:IDeterminteLandlord_determinteLandlordSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDeterminteLandlord/determinteLandlordSubscribeResponse" message="tns:IDeterminteLandlord_determinteLandlordSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="determinteLandlordUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IDeterminteLandlord/determinteLandlordUnSubscribe" message="tns:IDeterminteLandlord_determinteLandlordUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDeterminteLandlord/determinteLandlordUnSubscribeResponse" message="tns:IDeterminteLandlord_determinteLandlordUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeterminteLandlord_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IDeterminteLandlord/DeterminteLandlord_Client" message="tns:IDeterminteLandlord_DeterminteLandlord_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUpdateGame">
+    <wsdl:operation name="updateGameSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IUpdateGame/updateGameSubscribe" message="tns:IUpdateGame_updateGameSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateGame/updateGameSubscribeResponse" message="tns:IUpdateGame_updateGameSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGameUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IUpdateGame/updateGameUnSubscribe" message="tns:IUpdateGame_updateGameUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateGame/updateGameUnSubscribeResponse" message="tns:IUpdateGame_updateGameUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGame_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateGame/UpdateGame_Client" message="tns:IUpdateGame_UpdateGame_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITimeCounterDown">
+    <wsdl:operation name="timeCounterDownSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/ITimeCounterDown/timeCounterDownSubscribe" message="tns:ITimeCounterDown_timeCounterDownSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ITimeCounterDown/timeCounterDownSubscribeResponse" message="tns:ITimeCounterDown_timeCounterDownSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="timeCounterDownUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/ITimeCounterDown/timeCounterDownUnSubscribe" message="tns:ITimeCounterDown_timeCounterDownUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ITimeCounterDown/timeCounterDownUnSubscribeResponse" message="tns:ITimeCounterDown_timeCounterDownUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimeCounterDown_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/ITimeCounterDown/TimeCounterDown_Client" message="tns:ITimeCounterDown_TimeCounterDown_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IGameOver">
+    <wsdl:operation name="gameoverSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IGameOver/gameoverSubscribe" message="tns:IGameOver_gameoverSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IGameOver/gameoverSubscribeResponse" message="tns:IGameOver_gameoverSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gameoverUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IGameOver/gameoverUnSubscribe" message="tns:IGameOver_gameoverUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IGameOver/gameoverUnSubscribeResponse" message="tns:IGameOver_gameoverUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GameOver_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IGameOver/GameOver_Client" message="tns:IGameOver_GameOver_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUpdateLandlordCard">
+    <wsdl:operation name="updateLandlordCardSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IUpdateLandlordCard/updateLandlordCardSubscribe" message="tns:IUpdateLandlordCard_updateLandlordCardSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateLandlordCard/updateLandlordCardSubscribeResponse" message="tns:IUpdateLandlordCard_updateLandlordCardSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLandlordCardUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IUpdateLandlordCard/updateLandlordCardUnSubscribe" message="tns:IUpdateLandlordCard_updateLandlordCardUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateLandlordCard/updateLandlordCardUnSubscribeResponse" message="tns:IUpdateLandlordCard_updateLandlordCardUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLandlordCard_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateLandlordCard/UpdateLandlordCard_Client" message="tns:IUpdateLandlordCard_UpdateLandlordCard_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUpdateChatter">
+    <wsdl:operation name="updateChatterSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IUpdateChatter/updateChatterSubscribe" message="tns:IUpdateChatter_updateChatterSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateChatter/updateChatterSubscribeResponse" message="tns:IUpdateChatter_updateChatterSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateChatterUnSubscribe">
+      <wsdl:input wsaw:Action="DoudizhuServiceContract/IUpdateChatter/updateChatterUnSubscribe" message="tns:IUpdateChatter_updateChatterUnSubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateChatter/updateChatterUnSubscribeResponse" message="tns:IUpdateChatter_updateChatterUnSubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChatter_Client">
+      <wsdl:output wsaw:Action="DoudizhuServiceContract/IUpdateChatter/UpdateChatter_Client" message="tns:IUpdateChatter_UpdateChatter_Client_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

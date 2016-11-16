@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{543711F0-E94F-49FB-881B-8A8FF5EC0F4A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoudizhuClient</RootNamespace>
+    <AssemblyName>DoudizhuClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Lobby.xaml.cs">
+      <DependentUpon>Lobby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyRevised.xaml.cs">
+      <DependentUpon>LobbyRevised.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DoudizhuService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Page Include="ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Lobby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LobbyRevised.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Doudizhu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Doudizhu.xaml.cs">
+      <DependentUpon>Doudizhu.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="WindowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\DoudizhuService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DoudizhuService\DoudizhuClient.DoudizhuService.Card.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoudizhuService\DoudizhuClient.DoudizhuService.Player.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoudizhuService\DoudizhuServiceContract.wsdl" />
+    <None Include="Service References\DoudizhuService\DoudizhuServiceContract.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DoudizhuService\service.wsdl" />
+    <None Include="Service References\DoudizhuService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DoudizhuService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoudizhuService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoudizhuService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoudizhuService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cards\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\defaultAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\farmer_m_l.png" />
+    <Resource Include="Resources\farmer_m_r.png" />
+    <Resource Include="Resources\farmer_w_l.png" />
+    <Resource Include="Resources\farmer_w_r.png" />
+    <Resource Include="Resources\landlord_m_l.png" />
+    <Resource Include="Resources\landlord_m_r.png" />
+    <Resource Include="Resources\landlord_w_l.png" />
+    <Resource Include="Resources\landlord_w_r.png" />
+    <None Include="Resources\Style\button.png" />
+    <None Include="Resources\bt_3.png" />
+    <Content Include="Resources\sound\w_qiangdizhu3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\w_qiangdizhu2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\m_qiangdizhu2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\m_qiangdizhu3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\w_qiangdizhu.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\w_pass.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\w_jiaodizhu.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\w_buqiang.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\w_bujiao.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\bt_1.png" />
+    <Resource Include="Resources\bt_2.png" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\ready.png" />
+    <Content Include="Resources\sound\bg_exciting.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\bg_normal.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\bg_welcome.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\bt_click.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\click.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\give.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\loss.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\m_bujiao.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\m_buqiang.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\m_jiaodizhu.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\m_pass.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\m_qiangdizhu.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\sound\start.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sound\win.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,135 @@
+﻿<Window x:Class="DoudizhuClient.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoudizhuClient"
+        mc:Ignorable="d"
+        Title="Login" Height="600" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowStyle="None" Style="{DynamicResource MyWindowStyle}">
+    <Window.Resources>
+        <Style x:Key="btnLogin" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Grid>
+                            <Rectangle x:Name="rectangle" Fill="#FF6A0404" RadiusY="10" RadiusX="10" Stroke="#FF212121"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E59400" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF0654C5" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FFB20000" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="tbUsername" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="0">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Background="#FF333333" BorderBrush="Black" FontFamily="Manteka" FontSize="18.667" Padding="10,0,0,0"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF850200"/>
+                                <Setter Property="Background" TargetName="PART_ContentHost" Value="#FF343434"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Background" TargetName="PART_ContentHost">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF7E7E7E" Offset="0"/>
+                                            <GradientStop Color="#FF292929" Offset="0.897"/>
+                                            <GradientStop Color="#FF424242" Offset="0.039"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF009EFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="tbPassword" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="0">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Background="#FF333333" BorderBrush="Black" FontFamily="Manteka" FontSize="18.667" Padding="10,0,0,0"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF850200"/>
+                                <Setter Property="Background" TargetName="PART_ContentHost" Value="#FF343434"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Background" TargetName="PART_ContentHost">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF7E7E7E" Offset="0"/>
+                                            <GradientStop Color="#FF292929" Offset="0.897"/>
+                                            <GradientStop Color="#FF424242" Offset="0.039"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF009EFF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>      
+    </Window.Resources>
+
+    <Grid x:Name="Login_Register" Background="#E5000000">
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+
+            <TextBox x:Name="tb_username" Grid.Row="0" Margin="47,211,47,306" VerticalContentAlignment="Center" Text="Username" FontFamily="Roboto" Padding="10,0,0,0" VerticalAlignment="Center" Height="55" Style="{DynamicResource tbUsername}" GotFocus="tb_username_GotFocus"/>
+            <PasswordBox x:Name="tb_password" Margin="47,280,47,237" VerticalContentAlignment ="Center"  Password="********" FontFamily="Roboto" SnapsToDevicePixels="True" Padding="10,0,0,0" VerticalAlignment="Center" Height="55" Style="{DynamicResource tbPassword}"  GotFocus="tb_password_GotFocus"/>
+            <Button x:Name="bt_Login" Content="LOGIN" VerticalContentAlignment="Center" Height="35" Margin="72,352,72,185" Width="230" Click="bt_Login_Click" VerticalAlignment="Center" Style="{DynamicResource btnLogin}"/>
+            <Button x:Name="bt_register" Content="Register" VerticalContentAlignment="Center" Width="74" Click="bt_register_Click" Grid.Column="1" Height="25" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

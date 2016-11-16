@@ -1,0 +1,35 @@
+﻿<Window x:Class="DoudizhuClient.Lobby"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoudizhuClient"
+        mc:Ignorable="d"
+        Title="Lobby" Height="600" Width="800" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Style TargetType="ListBox">
+        </Style>
+    </Window.Resources>
+    <Grid Name="grid" Loaded="grid_Loaded" Background="#E5004B80">
+        <Button x:Name="bt_1_2" Content="sit dwon" HorizontalAlignment="Left" Margin="77,209,0,0" VerticalAlignment="Top" Width="74" Click="bt_1_2_Click"/>
+        <Button x:Name="bt_1_1" Content="sit down" HorizontalAlignment="Left" Margin="29,71,0,0" VerticalAlignment="Top" Width="74" Click="bt_1_1_Click"/>
+        <Button x:Name="bt_1_3" Content="sit down" HorizontalAlignment="Left" Margin="211,70,0,0" VerticalAlignment="Top" Width="74" Click="bt_1_3_Click"/>
+        <Label x:Name="lb_1_1" Content="player 1 name" HorizontalAlignment="Left" Margin="61,71,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_1_2" Content="player 2 name" HorizontalAlignment="Left" Margin="130,258,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_1_3" Content="player 3 name" HorizontalAlignment="Left" Margin="229,71,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Button x:Name="bt_2_2" Content="sit dwon" HorizontalAlignment="Left" Margin="428,213,0,0" VerticalAlignment="Top" Width="74" Click="bt_2_2_Click"/>
+        <Button x:Name="bt_2_1" Content="sit down" HorizontalAlignment="Left" Margin="336,97,0,0" VerticalAlignment="Top" Width="74" Click="bt_2_1_Click"/>
+        <Button x:Name="bt_2_3" Content="sit down" HorizontalAlignment="Left" Margin="515,97,0,0" VerticalAlignment="Top" Width="74" Click="bt_2_3_Click"/>
+        <Label x:Name="lb_2_1" Content="player 1 name" HorizontalAlignment="Left" Margin="410,71,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_2_2" Content="player 2 name" HorizontalAlignment="Left" Margin="480,258,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_2_3" Content="player 3 name" HorizontalAlignment="Left" Margin="578,71,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_1_1_ready" Content="Ready" HorizontalAlignment="Left" Margin="77,122,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_1_3_ready" Content="Ready" HorizontalAlignment="Left" Margin="243,122,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_1_2_ready" Content="Ready" HorizontalAlignment="Left" Margin="147,209,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_2_1_ready" Content="Ready" HorizontalAlignment="Left" Margin="428,122,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_2_3_ready" Content="Ready" HorizontalAlignment="Left" Margin="592,122,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="lb_2_2_ready" Content="Ready" HorizontalAlignment="Left" Margin="497,209,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Ellipse Name="table_1" Fill="Yellow" HorizontalAlignment="Left" Height="92" Margin="108,97,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Ellipse x:Name="table_2" Fill="Yellow" HorizontalAlignment="Left" Height="92" Margin="415,112,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>
